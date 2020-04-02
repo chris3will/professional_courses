@@ -1,0 +1,52 @@
+# Project: 项目3
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ANALYZE.o CGEN.o CODE.o MAIN.o PARSE.o SCAN.o SYMTAB.o TM.o UTIL.o
+LINKOBJ  = ANALYZE.o CGEN.o CODE.o MAIN.o PARSE.o SCAN.o SYMTAB.o TM.o UTIL.o
+LIBS     = -L"E:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"E:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 项目3.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+ANALYZE.o: ANALYZE.C
+	$(CC) -c ANALYZE.C -o ANALYZE.o $(CFLAGS)
+
+CGEN.o: CGEN.C
+	$(CC) -c CGEN.C -o CGEN.o $(CFLAGS)
+
+CODE.o: CODE.C
+	$(CC) -c CODE.C -o CODE.o $(CFLAGS)
+
+MAIN.o: MAIN.C
+	$(CC) -c MAIN.C -o MAIN.o $(CFLAGS)
+
+PARSE.o: PARSE.C
+	$(CC) -c PARSE.C -o PARSE.o $(CFLAGS)
+
+SCAN.o: SCAN.C
+	$(CC) -c SCAN.C -o SCAN.o $(CFLAGS)
+
+SYMTAB.o: SYMTAB.C
+	$(CC) -c SYMTAB.C -o SYMTAB.o $(CFLAGS)
+
+TM.o: TM.C
+	$(CC) -c TM.C -o TM.o $(CFLAGS)
+
+UTIL.o: UTIL.C
+	$(CC) -c UTIL.C -o UTIL.o $(CFLAGS)
