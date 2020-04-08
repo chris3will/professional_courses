@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2027303c-b7ba-48e4-9ca5-2897344c98c7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aFIOKRJRQGYxYvIBd1oh31gBkj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="Application.TwoDatasourceClient">
+    <configuration name="BlackHoleServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BlackHoleServer" />
+      <module name="lab_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadTest" />
+      <module name="lab_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TwoDatasourceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TwoDatasourceClient" />
+      <module name="lab_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TwoDatasourceClient" />
+        <item itemvalue="Application.BlackHoleServer" />
+        <item itemvalue="Application.ThreadTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2027303c-b7ba-48e4-9ca5-2897344c98c7" name="Default Changelist" comment="" />
+      <created>1586324882010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586324882010</updated>
+      <workItem from="1586324884671" duration="4921000" />
+      <workItem from="1586346637581" duration="3889000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="451" y="112" key="#Project_Structure" timestamp="1586324997163">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="451" y="112" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1586324997163" />
+    <state x="395" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586325069765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="395" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586325069765" />
+    <state x="776" y="201" key="FileChooserDialogImpl" timestamp="1586331448337">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="776" y="201" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1586331448337" />
+    <state width="1866" height="274" key="GridCell.Tab.0.bottom" timestamp="1586339132923">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586339132923" />
+    <state width="1866" height="274" key="GridCell.Tab.0.center" timestamp="1586339132923">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586339132923" />
+    <state width="1866" height="274" key="GridCell.Tab.0.left" timestamp="1586339132923">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586339132923" />
+    <state width="1866" height="274" key="GridCell.Tab.0.right" timestamp="1586339132923">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586339132923" />
+    <state x="427" y="48" key="SettingsEditor" timestamp="1586334254657">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="427" y="48" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586334254657" />
+  </component>
+</project>

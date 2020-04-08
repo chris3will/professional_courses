@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31b1517e-dd1b-400b-8c1e-9e94fdc27db5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aFzVLcdNj2tk2dQPEGLWRkSahH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RunManager" selected="Application.FileTransferClient">
+    <configuration name="DualClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DualClient" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FileServer" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTransferClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FileTransferClient" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTransferServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FileTransferServer" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FileTransferClient" />
+        <item itemvalue="Application.FileTransferServer" />
+        <item itemvalue="Application.DualClient" />
+        <item itemvalue="Application.FileServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31b1517e-dd1b-400b-8c1e-9e94fdc27db5" name="Default Changelist" comment="" />
+      <created>1586346152257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586346152257</updated>
+      <workItem from="1586346155337" duration="7987000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="925" y="326" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1586352877806">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="925" y="326" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586352877806" />
+    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1586348793700">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1586348793700" />
+    <state x="397" y="195" width="1153" height="746" key="DiffContextDialog" timestamp="1586352309982">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="397" y="195" width="1153" height="746" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586352309982" />
+    <state width="1281" height="274" key="GridCell.Tab.0.bottom" timestamp="1586356879892">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
+    <state width="1281" height="274" key="GridCell.Tab.0.center" timestamp="1586356879892">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
+    <state width="1281" height="274" key="GridCell.Tab.0.left" timestamp="1586356879892">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
+    <state width="1281" height="274" key="GridCell.Tab.0.right" timestamp="1586356879892">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1281" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
+    <state x="592" y="47" key="SettingsEditor" timestamp="1586353196840">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="592" y="47" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586353196840" />
+  </component>
+</project>

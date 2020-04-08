@@ -30,7 +30,6 @@ public class Server {
                     break;
                 }
             }
-
         }catch (Exception e){
             e.printStackTrace();
         }finally {
