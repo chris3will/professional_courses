@@ -28,6 +28,7 @@ public class FileTransferServer extends ServerSocket {
      */
 
     public void load() throws Exception{
+        System.out.println("服务器核心已经启动！");
         while(true){
             //目前采用的是阻塞是方式，即一个人的操作会让另一个人的操作进行等待
             Socket socket = this.accept();  //this 即本身这个进程是个临界资源
@@ -41,7 +42,7 @@ public class FileTransferServer extends ServerSocket {
 
         private DataInputStream dis;  //服务器端，数据输入流
 
-        private FileOutputStream fos;
+        private FileOutputStream fos;  //读一个文件要用的内容
 
         public Task(Socket socket){
             this.socket = socket;
@@ -50,9 +51,10 @@ public class FileTransferServer extends ServerSocket {
         @Override
         public void run(){
             try{
+                System.out.println("有新的客户端正在接入");
                 dis = new DataInputStream(socket.getInputStream());
 
-                //获取文件名和长度
+                //获取文件名和长度,这点可以用来控制观察接收进度
                 String fileName = dis.readUTF();
                 long fileLength = dis.readLong();
                 File directory = new File("E:\\thirdSpring");
@@ -65,9 +67,12 @@ public class FileTransferServer extends ServerSocket {
                 //开始接受文件
                 byte[] bytes = new byte[1024];
                 int length =0;
+                long progress = 0 ;//进度控制条
                 while((length = dis.read(bytes,0,bytes.length))!=-1){
                     fos.write(bytes,0,length);
                     fos.flush();
+                    progress += length;
+                    System.out.print("| "+ (100*progress / file.length()) + "% |\r");
                 }
                 System.out.println("***文件接收成功 [File Name: "+fileName + "] [Size: "+getFormatFileSize(fileLength)+"] ***");
             }catch (Exception e){

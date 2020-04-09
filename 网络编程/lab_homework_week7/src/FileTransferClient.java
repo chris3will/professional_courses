@@ -17,7 +17,7 @@ public class FileTransferClient extends Socket{
 
     private FileInputStream fis;
 
-    private DataOutputStream dos;
+    private DataOutputStream dos;  // 我这个是为了写到本地
 
     /*
      * 构造函数
