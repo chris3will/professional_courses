@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="lab_homework_week7:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="31b1517e-dd1b-400b-8c1e-9e94fdc27db5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="327" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,18 +32,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Application.FileTransferClient">
-    <configuration name="DualClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DualClient" />
-      <module name="lab_homework_week7" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FileServer" />
+  <component name="RunManager" selected="Application.MyFTPClient">
+    <configuration name="DOSTutorial" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DOSTutorial" />
       <module name="lab_homework_week7" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -55,12 +59,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyFTPClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyFTPClient" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFTPClient2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MyFTPClient" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFTPServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyFTPServer" />
+      <module name="lab_homework_week7" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MyFTPClient2" />
+      <item itemvalue="Application.DOSTutorial" />
+      <item itemvalue="Application.FileTransferClient" />
+      <item itemvalue="Application.FileTransferServer" />
+      <item itemvalue="Application.MyFTPClient" />
+      <item itemvalue="Application.MyFTPServer" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MyFTPClient" />
+        <item itemvalue="Application.MyFTPServer" />
         <item itemvalue="Application.FileTransferClient" />
         <item itemvalue="Application.FileTransferServer" />
-        <item itemvalue="Application.DualClient" />
-        <item itemvalue="Application.FileServer" />
+        <item itemvalue="Application.DOSTutorial" />
       </list>
     </recent_temporary>
   </component>
@@ -86,7 +120,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586346152257</updated>
-      <workItem from="1586346155337" duration="7987000" />
+      <workItem from="1586346155337" duration="8282000" />
+      <workItem from="1586392585007" duration="25602000" />
+      <workItem from="1586612161708" duration="382000" />
+      <workItem from="1586648900373" duration="943000" />
+      <workItem from="1586649911418" duration="339000" />
+      <workItem from="1586650737677" duration="14313000" />
+      <workItem from="1586674670123" duration="232000" />
+      <workItem from="1586674917555" duration="36000" />
+      <workItem from="1586675104544" duration="1431000" />
+      <workItem from="1586676574191" duration="2790000" />
     </task>
     <servers />
   </component>
@@ -98,33 +141,81 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="925" y="326" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586352877806" />
-    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1586348793700">
+    <state x="409" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586673347803">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1586348793700" />
+    <state x="409" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586673347803" />
+    <state x="1106" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586425941254">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1106" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1586425941254" />
+    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1586401458566">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1121" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1586401458566" />
+    <state x="623" y="276" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586678706339">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="276" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586678706339" />
     <state x="397" y="195" width="1153" height="746" key="DiffContextDialog" timestamp="1586352309982">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="397" y="195" width="1153" height="746" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586352309982" />
-    <state width="1281" height="274" key="GridCell.Tab.0.bottom" timestamp="1586356879892">
+    <state width="1866" height="278" key="GridCell.Tab.0.bottom" timestamp="1586678521345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1281" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
-    <state width="1281" height="274" key="GridCell.Tab.0.center" timestamp="1586356879892">
+    <state width="1866" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586678521345" />
+    <state width="1866" height="278" key="GridCell.Tab.0.center" timestamp="1586678521344">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1281" height="274" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
-    <state width="1281" height="274" key="GridCell.Tab.0.left" timestamp="1586356879892">
+    <state width="1866" height="278" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586678521344" />
+    <state width="1866" height="278" key="GridCell.Tab.0.left" timestamp="1586678521344">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1281" height="274" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
-    <state width="1281" height="274" key="GridCell.Tab.0.right" timestamp="1586356879892">
+    <state width="1866" height="278" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586678521344" />
+    <state width="1866" height="278" key="GridCell.Tab.0.right" timestamp="1586678521345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1281" height="274" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586356879892" />
-    <state x="592" y="47" key="SettingsEditor" timestamp="1586353196840">
+    <state width="1866" height="278" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586678521345" />
+    <state width="1866" height="344" key="GridCell.Tab.1.bottom" timestamp="1586676535819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="592" y="47" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586353196840" />
+    <state width="1866" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586676535819" />
+    <state width="1866" height="344" key="GridCell.Tab.1.center" timestamp="1586676535819">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="344" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586676535819" />
+    <state width="1866" height="344" key="GridCell.Tab.1.left" timestamp="1586676535819">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="344" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586676535819" />
+    <state width="1866" height="344" key="GridCell.Tab.1.right" timestamp="1586676535819">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1866" height="344" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586676535819" />
+    <state x="637" y="141" width="1083" height="739" key="SettingsEditor" timestamp="1586678711088">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="637" y="141" width="1083" height="739" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586678711088" />
+    <state width="623" height="498" key="SwitcherDM" timestamp="1586658453008">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1586658453007" />
+    <state x="559" y="318" key="com.intellij.ide.util.TipDialog" timestamp="1586676574156">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="559" y="318" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586676574156" />
+    <state x="401" y="209" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586421878511">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="401" y="209" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1586421878511" />
+    <state x="901" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1586678083080">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="901" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1586678083080" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab_homework_week7$MyFTPClient.ic" NAME="MyFTPClient Coverage Results" MODIFIED="1586677106265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/lab_homework_week7$MyFTPClient2.ic" NAME="MyFTPClient2 Coverage Results" MODIFIED="1586673933772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
