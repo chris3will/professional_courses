@@ -45,9 +45,9 @@ typedef enum
 #define MAXTOKENLEN 256
 char tokenString[MAXTOKENLEN + 1]; //还有一个休止符
 
-//定义TOKEN变换的DFA,注意，把OVER的状态归结到了INCOMMIT中，这是由于CMINUS的词法规则导致的
+//定义TOKEN变换的DFA,注意，把OVER的状态归结到了INCOMMENT中，这是由于CMINUS的词法规则导致的
 typedef enum{
-    START,INCOMMIT,INCOMMIT2,INCOMMIT3,INNUM,INID,INLE,INRE,INDE,INUE,DONE
+    START,INCOMMENT,INCOMMENT2,INCOMMENT3,INNUM,INID,INLE,INRE,INDE,INUE,DONE
 }StateType;
 
 //定义缓冲区
@@ -211,7 +211,7 @@ TokenType getToken()
                 else if (c == '/')
                 {
                     save = FALSE;  //我先不保存，因为现在不确定最终状态
-                    state = INCOMMIT;
+                    state = INCOMMENT;
                 }
                 else if ((c == ' ') || (c == '\t') || (c == '\n'))
                     save = FALSE;
@@ -263,7 +263,7 @@ TokenType getToken()
                     }
                 }
                 break;
-            case INCOMMIT:
+            case INCOMMENT:
                 //上一个字符是'/'我现在需要区分它是注释的第一部分还是单纯的over
                 save = FALSE;
                 if (c != '*')
@@ -276,16 +276,16 @@ TokenType getToken()
                 //这部分有动作，但是我又觉得这部分不能简单拆，还要把*/右半部分的这个单独拆出来才行
                 else
                 {
-                    state = INCOMMIT2;
+                    state = INCOMMENT2;
                     //仍然保持不保存状态
                 }
                 break;
-            case INCOMMIT2:
+            case INCOMMENT2:
                 //我假设状态二也是可以收缩的
                 save = FALSE;
                 if(c=='*')
                 {
-                    state = INCOMMIT3;
+                    state = INCOMMENT3;
                 }
                 else if(c==EOF)
                 {
@@ -293,16 +293,16 @@ TokenType getToken()
                     currentToken = ENDFILE;
                 }
                 break;
-            case INCOMMIT3:
+            case INCOMMENT3:
                 save = FALSE;
                 if(c=='*')
-                    state = INCOMMIT3;
+                    state = INCOMMENT3;
                 else if(c=='/')
                 {
                     state = START;
                 }
                 else
-                    state = INCOMMIT2;
+                    state = INCOMMENT2;
                 break;
             case INLE:
                 state = DONE; //已经得到了2字符操作符的第二个字符，无论如何都可以结束了，要么成功要么报错
