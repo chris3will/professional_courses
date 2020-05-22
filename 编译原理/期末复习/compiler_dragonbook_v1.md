@@ -48,7 +48,7 @@
 
 **词素**lexeme，对于每个词素，词法分析器产生如下的词法单元
 
-![image-20200519175902481](image-20200519175902481.png)
+![image-20200519175902481](compiler_dragonbook_v1.assets/image-20200519175902481.png)
 
 词法分析输出可以作为前端部分的下一项，即语法分析的输入内容
 
@@ -300,7 +300,7 @@ regular definition
 - ![image-20200520145837963](compiler_dragonbook_v1.assets/image-20200520145837963.png)
 - ![image-20200520145843338](compiler_dragonbook_v1.assets/image-20200520145843338.png)
 
-![image-20200520150035366](image-20200520150035366.png)
+![image-20200520150035366](compiler_dragonbook_v1.assets/image-20200520150035366.png)
 
 #### 3.6.2 转换表（用表的形式展现NFA）
 
@@ -343,7 +343,7 @@ DFA是NFA的一个特例，其特点在于：
 
 ![image-20200520155711657](compiler_dragonbook_v1.assets/image-20200520155711657.png)
 
-![image-20200520155759101](image-20200520155759101.png)
+![image-20200520155759101](compiler_dragonbook_v1.assets/image-20200520155759101.png)
 
 当所有的状态都加上标记之后，就可以得到一个DFA的转换表
 
@@ -685,4 +685,319 @@ GOTO函数：
 ![image-20200520223841603](compiler_dragonbook_v1.assets/image-20200520223841603.png)
 
 ****
+
+#### 4.6.3 LR语法分析算法
+
+![image-20200521192933113](compiler_dragonbook_v1.assets/image-20200521192933113.png)
+
+![image-20200522071950419](compiler_dragonbook_v1.assets/image-20200522071950419.png)
+
+在已知语法分析表的情况下
+
+![image-20200522073922350](compiler_dragonbook_v1.assets/image-20200522073922350.png)
+
+我们可以通过输入串，得到一个分析过程：
+
+![image-20200522074050213](compiler_dragonbook_v1.assets/image-20200522074050213.png)
+
+#### 4.6.4 构造SLR语法分析表
+
+![image-20200522074138730](compiler_dragonbook_v1.assets/image-20200522074138730.png)
+
+算法如下：
+
+![image-20200522074203337](compiler_dragonbook_v1.assets/image-20200522074203337.png)
+
+这一章的推导例题必须要做一下。
+
+## 第五章 语法制导的翻译
+
+### 5.1 语法制导定义
+
+语法制导定义SDD，是一个上下文无关文法和属性及规则的结合。属性和文法符号相关联，而规则和产生式相互关联。
+
+#### 5.1.1 继承属性和综合属性
+
+我们处理的通常是非终结符的两种属性
+
+- 综合属性syn：在分析树节点N上的非终结符号A的综合属性是由N上的产生式所关联的语义规则来定义的。且这个产生式的头一定是A。**节点N上的综合属性只能通过N的子节点或者N本身的属性值来定义。**
+- 继承属性inh：在分析树节点N上的非终结符号B的继承属性是由N的父节点上的产生式缩管刘安的语义规则来定义的。这个产生式体中必然包含符号B。结点N上的继承属性只能通过N的父节点，**N本身和N的兄弟节点上的属性值来定义。**
+
+一个SDD的例子：
+
+![image-20200522075330644](compiler_dragonbook_v1.assets/image-20200522075330644.png)
+
+注意，只包含综合属性的SDD称为S属性的SDD，上图便是如此。
+
+不要忽视SDD副作用的存在，即类似打印等功能都可能是副作用。
+
+一个没有副作用的SDD也称为**属性文法**。
+
+#### 5.1.2 在语法分析书的结点上对SDD求值
+
+一个显示了其各个属性的值的语法分析树称为注释语法分析树annotated parse tree
+
+精髓：要对某个结点的一个属性求值之前，必须首先求出这个属性值所依赖的所有属性值。（求某个节点综合属性，必然要先求出其所有子结点的综合属性值）
+
+有的时候语法可以和生成的语法分析树结构匹配上，但有的时候我们得到的结果是不匹配的，此时就要考虑到使用继承属性。（因为文法不是为了翻译而定义的，而是以语法分析为目的进行定义的。
+
+![image-20200522080506672](compiler_dragonbook_v1.assets/image-20200522080506672.png)
+
+![image-20200522080519025](compiler_dragonbook_v1.assets/image-20200522080519025.png)
+
+### 5.2 SDD的求值顺序
+
+依赖图（dependency graph）它可以确定一颗给定的语法分析树中的各个属性实例的求值顺序。
+
+#### 5.2.1 依赖图
+
+求依赖图的过程，即理解综合属性和继承属性的值相互之间求得的实际顺序
+
+![image-20200522081007225](compiler_dragonbook_v1.assets/image-20200522081007225.png)
+
+![image-20200522081013713](compiler_dragonbook_v1.assets/image-20200522081013713.png)
+
+#### 5.2.2 属性求值的顺序
+
+对于我们遇到的SDD，能求值的都是无环的，即我们应该可以得到一个拓扑排序。
+
+#### 5.2.3 S属性定义
+
+如果一个SDD的每个属性都是综合属性，它就是S属性的。
+
+如果一个SDD是S属性的，我们可以按照语法分析树结点的任何自底向上顺序来计算它的各个属性值。才用后根遍历是一个不错的选择。
+
+#### 5.2.4 L属性定义
+
+一个产生式体所关联的各个属性之间，依赖图的边总是从左到右而不能从右到左。
+
+更准确地来说每个属性必须要么是
+
+- 一个综合属性
+- ![image-20200522083825417](compiler_dragonbook_v1.assets/image-20200522083825417.png)
+  - ![image-20200522083833295](compiler_dragonbook_v1.assets/image-20200522083833295.png)
+  - ![image-20200522083841216](compiler_dragonbook_v1.assets/image-20200522083841216.png)
+  - ![image-20200522083855294](compiler_dragonbook_v1.assets/image-20200522083855294.png)
+
+环是始终不能出现的
+
+### 5.3 语法制导翻译的应用
+
+#### 5.3.1 抽象语法树的构造
+
+![image-20200522084226142](compiler_dragonbook_v1.assets/image-20200522084226142.png)
+
+![image-20200522084246769](compiler_dragonbook_v1.assets/image-20200522084246769.png)
+
+****
+
+画抽象语法树
+
+![image-20200522084403453](compiler_dragonbook_v1.assets/image-20200522084403453.png)
+
+采用自底向上的构造方法创建时，语法分析书和抽象语法树的结构可以比较接近。但是如果使用一个为自顶向下的语法分析设计的文法，那么得到的抽象语法树是相同的，但是语法分析书结构和抽象语法树结构会有很大的不同。
+
+![image-20200522084703065](compiler_dragonbook_v1.assets/image-20200522084703065.png)
+
+### 5.4 语法制导的翻译方案 syntax-directed translation scheme
+
+*语法制导的翻译方案（SDT）*是在其产生式体重嵌入了程序片段的一个上下文无关文法。这些程序片段称为**语义动作**。它们可以出现在产生式体重的任何地方。
+
+![image-20200522085822964](compiler_dragonbook_v1.assets/image-20200522085822964.png)
+
+#### 5.4.1 后缀翻译方案
+
+![image-20200522085945248](compiler_dragonbook_v1.assets/image-20200522085945248.png)
+
+![image-20200522090031166](compiler_dragonbook_v1.assets/image-20200522090031166.png)
+
+****
+
+![image-20200522090104842](compiler_dragonbook_v1.assets/image-20200522090104842.png)
+
+![image-20200522090136663](compiler_dragonbook_v1.assets/image-20200522090136663.png)
+
+![image-20200522090142574](compiler_dragonbook_v1.assets/image-20200522090142574.png)
+
+#### 5.4.5 L属性定义的SDT
+
+![image-20200522090714610](compiler_dragonbook_v1.assets/image-20200522090714610.png)
+
+注意前提条件，只有s-sdd转换后的SDT，同时保证基础文法是LR的，才可以进行自底向上进行语法分析和翻译
+
+> **LR（0）文法判定**：如果文法对应的自动机中不存在移进-归约冲突和归约-归约冲突则为 LR(0)文法。换句话说LR(0)文法分析不能解决这两种冲突，所以范围最小。移进-归约冲突就是在同一个项集族中同时出现了可以移进的产生式和可以归约的产生式。归约-归约冲突类似。
+
+![image-20200522091120982](compiler_dragonbook_v1.assets/image-20200522091120982.png)
+
+一个很鲜明的例子：
+
+![image-20200522091359938](compiler_dragonbook_v1.assets/image-20200522091359938.png)
+
+这里与第六章联动，即展示了部分中间代码
+
+![image-20200522091437461](compiler_dragonbook_v1.assets/image-20200522091437461.png)
+
+![image-20200522091446838](compiler_dragonbook_v1.assets/image-20200522091446838.png)
+
+部分解释如下：
+
+![image-20200522091505765](compiler_dragonbook_v1.assets/image-20200522091505765.png)
+
+![image-20200522091724874](compiler_dragonbook_v1.assets/image-20200522091724874.png)
+
+## 第六章 中间代码生成
+
+不同编译器对中间表示的选择和设计各有不同。中间表示可以使一种真正的语言，也可以由编译器的各个处理阶段共享的多个内部数据结构组成。
+
+### 6.1 语法树的变体
+
+#### 6.1.1 表达式的有向无环图
+
+![image-20200522093756003](compiler_dragonbook_v1.assets/image-20200522093756003.png)
+
+![image-20200522093801806](compiler_dragonbook_v1.assets/image-20200522093801806.png)
+
+![image-20200522093838840](compiler_dragonbook_v1.assets/image-20200522093838840.png)
+
+#### 6.1.2 构造DAG的值编码方法
+
+![image-20200522093925693](compiler_dragonbook_v1.assets/image-20200522093925693.png)
+
+### 6.2 三地址码
+
+![image-20200522094025047](compiler_dragonbook_v1.assets/image-20200522094025047.png)
+
+注意，这些t都是临时变量，帮助我们存储中间计算结果而使用的
+
+#### 6.2.1 地址和指令
+
+三地址码基于两个基本概念：**地址和指令**
+
+地址的形式：
+
+- 名字。允许源程序的名字作为三地址码中的地址。
+- 常量。
+- 编译器临时生成的临时变量。
+
+几种常见的三地址指令形式：
+
+- ![image-20200522094315881](compiler_dragonbook_v1.assets/image-20200522094315881.png)
+
+- ![image-20200522094331761](compiler_dragonbook_v1.assets/image-20200522094331761.png)
+
+- ![image-20200522094342861](compiler_dragonbook_v1.assets/image-20200522094342861.png)
+
+- ![image-20200522094353557](compiler_dragonbook_v1.assets/image-20200522094353557.png)
+
+- ![image-20200522094405299](compiler_dragonbook_v1.assets/image-20200522094405299.png)
+
+- ![image-20200522094449990](compiler_dragonbook_v1.assets/image-20200522094449990.png)
+
+- ![image-20200522094508822](compiler_dragonbook_v1.assets/image-20200522094508822.png)
+
+- ![image-20200522094519483](compiler_dragonbook_v1.assets/image-20200522094519483.png)
+
+一个例子 While
+
+![image-20200522094616477](compiler_dragonbook_v1.assets/image-20200522094616477.png)
+
+![image-20200522094624651](compiler_dragonbook_v1.assets/image-20200522094624651.png)
+
+注意，乘法运算i*8适用于每个元素占8个存储单元的数组。
+
+#### 6.2.2 四元式表示
+
+![image-20200522094757713](compiler_dragonbook_v1.assets/image-20200522094757713.png)
+
+![image-20200522094804295](compiler_dragonbook_v1.assets/image-20200522094804295.png)
+
+#### 6.2.3 三元式表示
+
+​	一个三元式triple只有三个字段，分别为op、arg1和arg2.
+
+![image-20200522095006139](compiler_dragonbook_v1.assets/image-20200522095006139.png)
+
+![image-20200522095011148](compiler_dragonbook_v1.assets/image-20200522095011148.png)
+
+### 6.3 类型和声明
+
+可以把类型的应用划分为类型检查和翻译：
+
+- 类型检查 type checking。类型检查利用一组逻辑规则来推理一个程序在运行时刻的行为。更为明确的讲，类型检查保证运算分量的类型和运算符的预期类型相匹配。
+- 翻译时的应用 translation application。 根据一个名字的类型，编译器可以确定这个名字在运行时刻需要多大的存储空间。
+
+#### 6.3.1 类型表达式
+
+![image-20200522100417879](compiler_dragonbook_v1.assets/image-20200522100417879.png)
+
+#### 6.3.2 类型等价
+
+![image-20200522100614515](compiler_dragonbook_v1.assets/image-20200522100614515.png)
+
+#### 6.3.3 声明
+
+![image-20200522102403584](compiler_dragonbook_v1.assets/image-20200522102403584.png)
+
+#### 6.3.4 局部变量名和存储布局
+
+#### 6.3.5 声明的序列
+
+### 6.4 表达式的翻译
+
+#### 6.4.1 表达式中的运算
+
+下图中，使用S的属性code以及表达式E的属性addr和code，为一个赋值语句S生成三地址码。注意code属性对应着各表达式的三地址码。属性E.addr则表示存放E的值的地址。
+
+![image-20200522102930408](compiler_dragonbook_v1.assets/image-20200522102930408.png)
+
+****
+
+![image-20200522103246478](compiler_dragonbook_v1.assets/image-20200522103246478.png)
+
+#### 6.4.2 增量翻译
+
+增量翻译的时候就不用显示的构造code了，gen这条指令在利用地址进行运算的时候已经把它依赖的addr都得到了。
+
+![image-20200522103521323](compiler_dragonbook_v1.assets/image-20200522103521323.png)
+
+注意。属性addr表示的是一个结点的地址，而不是某个变量或常量
+
+### 6.6 控制流
+
+背景：if-else语句、while语句这类语句的翻译和对布尔表达式的翻译是结合在一起的。且要注意到程序设计语言中，布尔表达式经常用来：
+
+- 改变控制流
+- 计算逻辑值
+
+#### 6.6.1 布尔表达式
+
+![image-20200522104600158](compiler_dragonbook_v1.assets/image-20200522104600158.png)
+
+#### 6.6.2 短路代码
+
+在短路（跳转）代码中，布尔运算符&&、||和！被翻译成跳转指令。运算符本身不出现在代码中，布尔表达式的值是通过**代码序列中的位置**来表示的。
+
+![image-20200522105116724](compiler_dragonbook_v1.assets/image-20200522105116724.png)
+
+#### 6.6.3 控制流语句
+
+![image-20200522105258716](compiler_dragonbook_v1.assets/image-20200522105258716.png)
+
+![image-20200522105405326](compiler_dragonbook_v1.assets/image-20200522105405326.png)
+
+注意label的用法
+
+![image-20200522105935574](compiler_dragonbook_v1.assets/image-20200522105935574.png)
+
+
+
+![image-20200522105415360](compiler_dragonbook_v1.assets/image-20200522105415360.png)
+
+#### 6.6.4 布尔表达式的控制流翻译
+
+![image-20200522110223379](compiler_dragonbook_v1.assets/image-20200522110223379.png)
+
+解释：
+
+![image-20200522110348439](compiler_dragonbook_v1.assets/image-20200522110348439.png)
 
