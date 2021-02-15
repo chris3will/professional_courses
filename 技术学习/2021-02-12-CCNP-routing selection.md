@@ -106,3 +106,4 @@ ripv1 比较古老，工程中已经绝版。
 ![image-20210214090845165](2021-02-12-CCNP-routing%20selection.assets/image-20210214090845165.png)
 
 ![image-20210214091156374](2021-02-12-CCNP-routing%20selection.assets/image-20210214091156374.png)
+
