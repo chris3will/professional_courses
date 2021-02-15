@@ -44,4 +44,26 @@
 
 ![image-20210212094515775](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212094515775.png)
 
-刚开始也是默认打开routing功能的。
+刚开始也是默认打开的
+
+为了减少配置的繁琐程度
+
+![image-20210212101904421](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212101904421.png)
+
+就用超网的形式来处理。
+
+![image-20210212102042002](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212102042002.png)
+
+如果不写明 no switch接口，则没法去连接
+
+![image-20210212102634379](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212102634379.png)
+
+![image-20210212102831640](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212102831640.png)
+
+二层交换机，只能给一个vlan配置IP地址，
+
+分vlan的时候需要注意，用户vlan是给pc用的，管理vlan是给设备用的
+
+二层交换设备一定要配网关（在配了IP地址之后）要不然他是没法转发数据的。
+
+![image-20210212104148343](2021-02-11-CCNPhongchasanbei-inter-vlan%20routing.assets/image-20210212104148343.png)
