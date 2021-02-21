@@ -2,7 +2,7 @@
 Author: Chris Wang
 Date: 2021-02-20 16:45:15
 LastEditors: your name
-LastEditTime: 2021-02-20 17:36:25
+LastEditTime: 2021-02-21 09:00:13
 Description: file content
 '''
 from z3 import *
@@ -67,7 +67,7 @@ print(bv_solver.check())
 m = bv_solver.model()
 print(x*32+y,"==",m.evaluate(x*32+y))
 print(x&y,"==",m.evaluate(x&y))
-'''
+
 
 
 x,y = Ints('x y')
@@ -75,3 +75,62 @@ s = Tactic('smt').solver()
 s.add(x>y+1)
 print(s.check())
 print(s.model())
+
+
+s = Then(With('simplify',arith_lhs = True,som = True),
+        'normalize-bounds','lia2pb','pb2bv',
+        'bit-blast','sat').solver()
+x,y,z = Ints('x y z')
+
+solve_using(s,
+        x > 0,x<10,
+        y>0,y<10,
+        z >0,z<10,
+        3*y+2*x==z)
+
+# It fails on the next example(it is unbounded)
+s.reset() # 这个是重置条件的函数
+solve_using(s,3*y+2*x == z)
+
+
+
+t = Then('simplify', 'normalize-bounds', 'solve-eqs')
+
+x,y,z = Ints('x y z')
+g = Goal()
+g.add(x>10,y==x+3,z >3)
+
+# r contains only one subgoal
+r = t(g)
+print(r)
+
+s = Solver()
+s.add(r[0])
+print(s.check())
+
+# model for the subgoal
+print(s.model())
+
+# model for the original goal
+print(r[0].convert_model(s.model())) # 注意运用这个拆分问题得到的r
+
+'''
+
+x,y,z = Reals('x y z')
+g = Goal()
+g.add(x+y+z > 0)
+p = Probe('num-consts')
+
+print("num-consts:",p(g))
+
+
+t = FailIf(p>2)
+try:
+    t(g)
+except Z3Exception:
+    print("tactic failed")
+
+print("trying again..")
+g = Goal()
+g.add(x+y>0)
+print(p(g))
